@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body.pagina-constelacoes {
+    background: #0b1033 url("../IMG/estrelas background.jpg") center / cover fixed no-repeat;
+    color: #eef1ff;
+}
+
+.conteudo {
+    max-width: 76rem;
+    margin: 0 auto;
+    padding: 9.5rem 2rem 5rem;
+}
+
+.titulo-pagina {
+    font-family: var(--marker);
+    font-size: clamp(2.8rem, 4.6vw, 4.2rem);
+    line-height: 1.1;
+    color: #f6e3a1;
+    margin-bottom: .6rem;
+}
+
+.intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    margin: 2rem;
+}
+
+.grade-estrelas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+}
+
+.estrela {
+    perspective: 1000px;
+}
+
+#principal {
+height: 10rem;
+margin-bottom: 21rem;
+transition: transform .3s ease;
+    
+}
+
+.estrela-inner {
+    display: grid;
+    transition: transform .7s ease;
+    transform-style: preserve-3d;
+}
+
+.estrela:hover .estrela-inner {
+    transform: rotateY(180deg);
+}
+
+.frente,
+.verso {
+    grid-area: 1 / 1;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border: 2px solid rgba(201, 162, 75, .7);
+}
+
+.frente {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.6rem 1.8rem;
+    background: rgba(14, 20, 56, .95);
+}
+
+.verso {
+    transform: rotateY(180deg);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #0e1438;
+    border-color: #f6e3a1;
+}
+
+.estrela .verso img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+.estrela img {
+    width: 11rem;
+    height: 11rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--ouro);
+    box-shadow: 0 0 28px rgba(246, 227, 161, .35);
+    margin-bottom: 1.2rem;
+}
+
+.estrela h2 {
+    font-family: var(--marker);
+    font-size: 2.1rem;
+    color: #f6e3a1;
+    margin-bottom: .5rem;
+}
+
+.estrela p {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 1rem;
+}
+
+.estrela strong {
+    color: #fff;
+}
+
+.pincel-linha {
+    color: #c9d3ff;
+}

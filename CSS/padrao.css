@@ -1,0 +1,224 @@
+:root {
+    --tinta: #1c1411;
+    --vinho: #520000;
+    --vinho-fundo: #2b0707;
+    --sol: #b3141b;
+    --papel: #e6d3a6;
+    --papel-claro: #f0e2bf;
+    --ouro: #c9a24b;
+    --texto: #2a1b15;
+    --marker: "Permanent Marker", "Segoe Print", cursive;
+    --corpo: "Shippori Mincho", "Noto Serif JP", Georgia, serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+}
+
+body {
+    margin: 0;
+    font-family: var(--corpo);
+    font-size: 1.125rem;
+    line-height: 1.75;
+    background-image: url('../IMG/papelvelho.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--texto);
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    margin-top: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--ouro);
+    outline-offset: 3px;
+}
+
+.topo {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 5.5rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    background-color: var(--vinho);
+    border-bottom: 3px solid var(--ouro);
+}
+
+.topo--noite {
+    background: rgba(18, 26, 66, .88);
+    backdrop-filter: blur(6px);
+}
+
+@supports (animation-timeline: scroll()) {
+    .topo--transparente {
+        background-color: transparent;
+        border-bottom-color: transparent;
+        animation: topo-solido linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 140px;
+    }
+}
+
+@keyframes topo-solido {
+    to {
+        background-color: var(--vinho);
+        border-bottom-color: var(--ouro);
+    }
+}
+
+.logo img {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    gap: 2.75rem;
+    font-family: var(--marker);
+}
+
+.menu a {
+    color: #fff3e6;
+    text-decoration: none;
+    font-size: 1.35rem;
+    line-height: 1.4;
+    padding: .25rem .1rem;
+    background: linear-gradient(var(--ouro), var(--ouro)) 0 100% / 0 3px no-repeat;
+    transition: background-size .25s ease;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    background-size: 100% 3px;
+}
+
+
+.botao {
+    display: inline-block;
+    font-family: var(--marker);
+    font-size: 1.25rem;
+    line-height: 1.3;
+    padding: .7rem 1.7rem;
+    color: #fff;
+    background: var(--sol);
+    border: 3px solid var(--tinta);
+    box-shadow: 5px 5px 0 var(--sombra, var(--tinta));
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.botao:hover {
+    color: #fff;
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 var(--sombra, var(--tinta));
+}
+
+.botao--claro {
+    background: var(--papel-claro);
+    color: var(--tinta);
+}
+
+.botao--claro:hover {
+    color: var(--tinta);
+}
+
+
+.pincelada {
+    height: 2.4rem;
+    background: var(--vinho);
+    clip-path: polygon(0.0% 37.4%, 3.8% 37.4%, 7.7% 32.2%, 11.5% 22.6%, 15.4% 18.4%, 19.2% 15.0%, 23.1% 15.3%, 26.9% 7.8%, 30.8% 10.0%, 34.6% 8.9%, 38.5% 13.7%, 42.3% 12.3%, 46.2% 3.7%, 50.0% 5.7%, 53.8% 4.2%, 57.7% 9.7%, 61.5% 8.6%, 65.4% 2.7%, 69.2% 10.6%, 73.1% 10.1%, 76.9% 15.7%, 80.8% 23.6%, 84.6% 20.9%, 88.5% 28.2%, 92.3% 34.5%, 96.2% 41.4%, 100.0% 38.5%, 100.0% 63.6%, 96.2% 59.8%, 92.3% 65.7%, 88.5% 76.6%, 84.6% 76.9%, 80.8% 82.3%, 76.9% 81.4%, 73.1% 88.7%, 69.2% 90.6%, 65.4% 88.5%, 61.5% 86.8%, 57.7% 90.5%, 53.8% 93.0%, 50.0% 95.8%, 46.2% 87.4%, 42.3% 89.5%, 38.5% 86.6%, 34.6% 90.8%, 30.8% 96.9%, 26.9% 84.3%, 23.1% 87.7%, 19.2% 75.0%, 15.4% 75.2%, 11.5% 72.2%, 7.7% 66.6%, 3.8% 59.2%, 0.0% 56.3%);
+}
+
+.footer {
+    background-color: var(--tinta);
+    color: white;
+    padding: 3rem 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 6rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links,
+.footer-social {
+    min-width: 200px;
+}
+
+.footer-links h3,
+.footer-social h3,
+.footer-endereço h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul,
+.footer-social ul,
+.footer-endereço ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-social li,
+.footer-endereço li {
+    margin: 0.5rem 0;
+}
+
+.footer-links a,
+.footer-social a,
+.footer-endereço a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover,
+.footer-endereço a:hover {
+    color: #00c96d;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+
+

@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+:root {
+    --tinta: #1c1411;
+    --vinho: #520000;
+    --vinho-fundo: #2b0707;
+    --sol: #b3141b;
+    --papel: #e6d3a6;
+    --papel-claro: #f0e2bf;
+    --ouro: #c9a24b;
+    --texto: #2a1b15;
+    --marker: "Permanent Marker", "Segoe Print", cursive;
+    --corpo: "Shippori Mincho", "Noto Serif JP", Georgia, serif;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 8rem 7rem 4rem;
+    color: #f6ead6;
+    background:
+        linear-gradient(90deg, rgba(24, 9, 7, .93) 0%, rgba(24, 9, 7, .62) 55%, rgba(24, 9, 7, .3) 100%),
+        url("../IMG/Wallpaper floresta.jpg") center / cover fixed no-repeat;
+    --sombra: var(--ouro);
+}
+
+.hero-texto {
+    max-width: 34rem;
+}
+
+.hero h1 {
+    font-family: var(--marker);
+    font-size: clamp(3.4rem, 6vw, 5.6rem);
+    line-height: 1.05;
+    color: #fff;
+    margin-bottom: .6rem;
+    animation: pincelar 1.1s cubic-bezier(.6, 0, .2, 1) both;
+}
+
+.hero .subtitulo {
+    font-family: var(--marker);
+    font-size: 1.7rem;
+    color: var(--ouro);
+    margin: 0 0 1.4rem;
+}
+
+.hero-texto>p:not(.subtitulo) {
+    font-size: 1.25rem;
+    margin: 0 0 2.2rem;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+}
+
+
+.sol {
+    flex: none;
+    height: min(38rem, 70vh);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: radial-gradient(circle at 38% 32%, #d7262d, #8c0f15 72%);
+    box-shadow: 0 0 0 .9rem rgba(179, 20, 27, .38), 0 0 110px rgba(215, 38, 45, .55);
+    animation: nascer 1.4s ease-out .3s both;
+}
+
+.sol img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes pincelar {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 -2% 0 0);
+    }
+}
+
+@keyframes nascer {
+    from {
+        opacity: 0;
+        transform: scale(.86);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.botao {
+    display: inline-block;
+    font-family: var(--marker);
+    font-size: 1.25rem;
+    line-height: 1.3;
+    padding: .7rem 1.7rem;
+    color: #fff;
+    background: var(--sol);
+    border: 3px solid var(--tinta);
+    box-shadow: 5px 5px 0 var(--sombra, var(--tinta));
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.botao:hover {
+    color: #fff;
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 var(--sombra, var(--tinta));
+}
+
+.botao--claro {
+    background: var(--papel-claro);
+    color: var(--tinta);
+}
+
+.botao--claro:hover {
+    color: var(--tinta);
+}
+
+.duas-colunas {
+    display: grid;
+    grid-template-columns: 22rem 1fr;
+    gap: 4.5rem;
+    align-items: center;
+    margin-bottom: 4.5rem;
+}
+
+.duas-colunas:last-child {
+    margin-bottom: 0;
+}
+
+.duas-colunas.invertida {
+    grid-template-columns: 1fr 22rem;
+}
+
+.imagem-lateral {
+    width: 100%;
+    max-height: 30rem;
+    object-fit: contain;
+}
+
+.imagem-capa {
+    border: 3px solid var(--tinta);
+    box-shadow: 9px 9px 0 var(--vinho);
+}
+
+#porque .duas-colunas {
+    margin-bottom: 0;
+}
+
+.secao {
+    max-width: 76rem;
+    margin: 0 auto;
+    padding: 5.5rem 2rem;
+}
+
+.titulo-secao {
+    font-family: var(--marker);
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 1.15;
+    color: var(--vinho);
+    margin-bottom: 1.6rem;
+}
+
+.subtitulo-secao {
+    font-family: var(--marker);
+    font-size: 2.2rem;
+    color: var(--sol);
+    margin-bottom: .8rem;
+}
+
+.texto p {
+    max-width: 62ch;
+    margin: 0 0 1.1rem;
+}
+
+.texto .botao {
+    margin-top: .8rem;
+    --sombra: var(--tinta);
+}
+
+
+.titulo-deuses {
+    border-radius: 6rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    font-family: "Permanent Marker";
+    font-weight: 400px;
+    font-style: normal;
+    color: #fffdfd;
+    background: rgb(82, 0, 0);
+}
+
+#pergaminhos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+
+.rolo {
+    height: 45rem;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.rolo-direita {
+    transform: scaleX(-1);
+}
+
+
+#papel {
+    flex: 1;
+    max-width: 60rem;
+    height: 42rem;
+    margin: 0 -1.7rem;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    background: #ecd9b6;
+    box-shadow: inset 0 0 40px rgba(90, 50, 20, 0.45);
+    position: relative;
+    z-index: 1;
+}
+
+
+#carouselExampleIndicators {
+    width: 100%;
+    margin: 0;
+}
+
+.carousel-item img {
+    border: 3px solid #3b1d0e;
+    border-radius: 4px;
+}
+
+.porque {
+    border-radius: 6rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    font-family: "Permanent Marker";
+    font-weight: 400px;
+    font-style: normal;
+    color: #fffdfd;
+    background: rgb(82, 0, 0);
+}
+
+.Lançamento {
+    border-radius: 6rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    font-family: "Permanent Marker";
+    font-weight: 400px;
+    font-style: normal;
+    color: #fffdfd;
+    background: rgb(82, 0, 0);
+}
+
+
+.quadro-deuses {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5rem;
+    margin-left: 15rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.imagem-deuses {
+    height: 30rem;
+    margin-left: -10rem;
+}
+
+.imagem-deuses:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.pincel:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.nome-deuses {
+    font-size: 4rem;
+}
+
+.quadro-deuses-P {
+    margin-left: 8rem;
+    border-radius: 5rem;
+    background-color: rgb(82, 0, 0);
+    width: auto;
+    height: auto;
+    color: white;
+    padding-inline: 4rem;
+    padding-top: 4.5rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Permanent Marker;
+}
+
+.pincel {
+    height: 10rem;
+}
+
+
+.deuses {
+    background: var(--vinho-fundo);
+    color: #f1e4c3;
+}
+
+.deuses .titulo-secao {
+    color: #fff3e0;
+    margin-bottom: .6rem;
+}
+
+.intro-deuses {
+    margin: 0 0 3.5rem;
+    max-width: 52ch;
+    color: #dccaa6;
+}
+
+.grade-deuses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem 2.6rem;
+}
+
+.carta {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 1.7rem 1.5rem;
+    color: var(--texto);
+    background: var(--papel-claro);
+    border: 3px solid var(--tinta);
+    box-shadow: 8px 8px 0 var(--sol);
+    transition: transform .2s ease;
+}
+
+.carta:hover {
+    transform: translateY(-4px);
+}
+
+.carta--destaque {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+.figura {
+    position: relative;
+    height: 15rem;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+}
+
+.carta--destaque .figura {
+    flex: none;
+    width: 19rem;
+    height: 19rem;
+    margin: 0;
+}
+
+.figura::before {
+    content: "";
+    position: absolute;
+    height: 12rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(179, 20, 27, .3), rgba(179, 20, 27, .05) 72%);
+}
+
+.carta--destaque .figura::before {
+    height: 16rem;
+}
+
+.figura img {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.carta-corpo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.carta h3 {
+    font-family: var(--marker);
+    font-size: 2.1rem;
+    line-height: 1.15;
+    color: var(--vinho);
+    margin-bottom: .6rem;
+}
+
+.carta p {
+    margin: 0 0 .8rem;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.pincel-bloco {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 2px dashed rgba(42, 27, 21, .4);
+    font-size: .95rem;
+    line-height: 1.4;
+}
+
+.carta p+.pincel-bloco {
+    margin-top: .6rem;
+}
+
+.pincel-bloco img {
+    height: 4.5rem;
+    width: auto;
+    max-width: 7rem;
+    object-fit: cover;
+    border: 2px solid var(--tinta);
+}
+
+.pincel-bloco small {
+    display: block;
+    font-size: .8rem;
+    color: #6b5547;
+}
+
+.pincel-bloco strong {
+    display: block;
+    color: var(--vinho);
+    font-weight: 700;
+}
+
+.pincel-bloco span {
+    display: block;
+}
